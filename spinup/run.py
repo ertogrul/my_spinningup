@@ -9,7 +9,7 @@ import os.path as osp
 import string
 import tensorflow as tf
 from textwrap import dedent
-
+###########################
 
 # Command line args that will go to ExperimentGrid.run, and must possess unique
 # values (therefore must be treated separately).
@@ -35,8 +35,9 @@ def parse_and_execute_grid_search(cmd, args):
     """Interprets algorithm name and cmd line args into an ExperimentGrid."""
 
     # Parse which algorithm to execute
+    
     algo = eval('spinup.'+cmd)
-
+    
     # Before all else, check to see if any of the flags is 'help'.
     valid_help = ['--help', '-h', 'help']
     if any([arg in valid_help for arg in args]):
@@ -70,7 +71,7 @@ def parse_and_execute_grid_search(cmd, args):
     # Assume such flags indicate that a boolean parameter should have
     # value True.
     for k,v in arg_dict.items():
-        if len(v)==0:
+        if len(v) == 0:
             v.append(True)
 
     # Third pass: check for user-supplied shorthands, where a key has
@@ -112,7 +113,7 @@ def parse_and_execute_grid_search(cmd, args):
     for k in RUN_KEYS:
         if k in arg_dict:
             val = arg_dict[k]
-            assert len(val)==1, \
+            assert len(val) == 1, \
                 friendly_err("You can only provide one value for %s."%k)
             run_kwargs[k] = val[0]
             del arg_dict[k]
@@ -120,7 +121,7 @@ def parse_and_execute_grid_search(cmd, args):
     # Determine experiment name. If not given by user, will be determined
     # by the algorithm name.
     if 'exp_name' in arg_dict:
-        assert len(arg_dict['exp_name'])==1, \
+        assert len(arg_dict['exp_name']) == 1, \
             friendly_err("You can only provide one value for exp_name.")
         exp_name = arg_dict['exp_name'][0]
         del arg_dict['exp_name']

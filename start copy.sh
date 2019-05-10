@@ -12,15 +12,15 @@ do
     case $opt in
         "1# Train LunarLander")
             echo "you chose choice 1"
-            
+            python -m spinup.run ppo --hid "[32,32]" --env LunarLander-v2 --exp_name installtest --gamma 0.999
             ;;
         "2# Check Lunarlander's perf")
             echo "you chose choice 2"
-            
+            python -m spinup.run test_policy data/installtest/installtest_s0
             ;;
         "3# Plot Results")
             echo "you chose choice $REPLY which is $opt"
-            
+            python -m spinup.run plot data/installtest/installtest_s0
             ;;
         "Quit")
             break
