@@ -4,6 +4,34 @@
 # This script enables running fist few commands after clonning the spinningup repo. 
 #
 
+#check what environment is on
+# output='conda env list'
+$(conda init --all)
+# $(conda activate spinningup)
+$(conda activate /anaconda3/envs/spinningup)
+
+
+
+#output=$(conda env list)
+#echo "$output"
+#
+#for i in $output; do
+#    echo "$i"
+#done
+
+
+
+
+
+#while read -r $line
+#do
+    #if [[ -z $line ]]
+    #then
+    #     exit
+    #fi
+#    echo "hello"
+#done
+
 # Bash Menu
 USERSCHOICE='Please enter your choice: '
 options=("1# Train LunarLander" "2# Check Lunarlander's perf" "3# Plot Results" "Quit")
