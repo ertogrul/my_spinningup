@@ -4,11 +4,16 @@
 # This script enables running fist few commands after clonning the spinningup repo. 
 #
 
-#check what environment is on
-# output='conda env list'
-$(conda init --all)
+#set the right conda environment
+# command_string="source activate spinningup"
+command_string="conda activate /anaconda3/envs/spinningup"
+eval "$command_string"
+# output=$(eval "$command_string")
+# echo "$output"
+
+#$$(conda init --all)
 # $(conda activate spinningup)
-$(conda activate /anaconda3/envs/spinningup)
+#$(conda activate /anaconda3/envs/spinningup)
 
 
 
@@ -18,9 +23,6 @@ $(conda activate /anaconda3/envs/spinningup)
 #for i in $output; do
 #    echo "$i"
 #done
-
-
-
 
 
 #while read -r $line
