@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 #
-# This script enables running fist few commands after clonning the spinningup repo. 
+# This script enables running fist few commands from spinning-up tutorial. 
 #
 
 #set the right conda environment
@@ -17,15 +17,15 @@ select opt in "${options[@]}"
 do
     case $opt in
         "1# Train LunarLander")
-            echo "you choose 1"
+            echo "you choose 1#"
             python -m spinup.run ppo --hid "[32,32]" --env LunarLander-v2 --exp_name installtest --gamma 0.999
             ;;
         "2# Check Lunarlander's perf")
-            echo "you choose 2"
+            echo "you choose 2#"
             python -m spinup.run test_policy data/installtest/installtest_s0
             ;;
         "3# Plot Results")
-            echo "you choose 3"
+            echo "you choose 3#"
             python -m spinup.run plot data/installtest/installtest_s0
             ;;
         "Quit")
