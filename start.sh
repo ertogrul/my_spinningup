@@ -12,20 +12,20 @@ echo "$output"
 
 # Bash Menu
 USERSCHOICE='Please enter your choice: '
-options=("1# Train LunarLander" "2# Check Lunarlander's perf" "3# Plot Results" "Quit")
+options=("Train LunarLander" "Check Lunarlander's perf" "Plot Results" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
-        "1# Train LunarLander")
-            echo "you choose 1#"
+        "Train LunarLander")
+            echo "OK, set's train Lunarlander"
             python -m spinup.run ppo --hid "[32,32]" --env LunarLander-v2 --exp_name installtest --gamma 0.999
             ;;
-        "2# Check Lunarlander's perf")
-            echo "you choose 2#"
+        "Check Lunarlander's perf")
+            echo "OK, let's check LunarLander's performance"
             python -m spinup.run test_policy data/installtest/installtest_s0
             ;;
-        "3# Plot Results")
-            echo "you choose 3#"
+        "Plot Results")
+            echo "OK, let's see plot results"
             python -m spinup.run plot data/installtest/installtest_s0
             ;;
         "Quit")
