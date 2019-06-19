@@ -17,15 +17,15 @@ select opt in "${options[@]}"
 do
     case $opt in
         "Train LunarLander")
-            echo "OK, let's train Lunarlander"
+            echo "OK, let's train Lunarlander."
             python -m spinup.run ppo --hid "[32,32]" --env LunarLander-v2 --exp_name installtest --gamma 0.999
             ;;
         "Check Lunarlander's perf")
-            echo "OK, let's check LunarLander's performance"
+            echo "OK, let's check LunarLander's performance."
             python -m spinup.run test_policy data/installtest/installtest_s0
             ;;
         "Plot Results")
-            echo "OK, let's see plot results"
+            echo "OK, let's see plot results."
             python -m spinup.run plot data/installtest/installtest_s0
             ;;
         "Quit")
