@@ -25,7 +25,7 @@ do
             python -m spinup.run test_policy data/installtest/installtest_s0
             ;;
         "Plot Results")
-            echo "OK, let's see plot results."
+            echo "Chages, changes, changes"
             python -m spinup.run plot data/installtest/installtest_s0
             ;;
         "Quit")
